@@ -3,10 +3,14 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const config = {
-  PORT: process.env.PORT || 5000,
-  KITE_API_KEY: process.env.KITE_API_KEY,
-  KITE_API_SECRET: process.env.KITE_API_SECRET,
-  KITE_ACCESS_TOKEN: process.env.KITE_ACCESS_TOKEN,
-  OPENAI_API_KEY: process.env.OPENAI_API_KEY,
-  // Add more AI providers later
+  port: process.env.PORT || 5000,
+  nodeEnv: process.env.NODE_ENV || 'development',
+  kite: {
+    apiKey: process.env.KITE_API_KEY || '',
+    apiSecret: process.env.KITE_API_SECRET || '',
+    accessToken: process.env.KITE_ACCESS_TOKEN,
+  },
+  // AI providers will be added here later
 };
+
+export default config;
